@@ -10,8 +10,8 @@ const Footer = () => {
                 <aside>
                     <Link className="btn border-blue-800 font-extrabold lg:text-3xl text-xl font-poppins text-blue-600 my-10" to="/">CareerCompass</Link>
                 </aside>
-                <nav className="my-7">
-                    <h6 className="footer-title font-bold text-xl">Socials</h6>
+                <nav className="my-7 gap-5">
+                    <h6 className="font-extrabold text-2xl text-white">Socials</h6>
                     <div className="grid grid-flow-col gap-10 text-3xl">
                         <a href="https://facebook.com" target="_blank">
                             <FaFacebook />
