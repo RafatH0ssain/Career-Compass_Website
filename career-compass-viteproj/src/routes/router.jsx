@@ -1,10 +1,12 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
+import Loader from "../components/Loader";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <MainLayout />,
+        loader: Loader,
     },
     {
         path: '/services/:id',

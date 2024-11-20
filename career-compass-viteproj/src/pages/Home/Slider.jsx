@@ -2,43 +2,6 @@ import { Link } from "react-router-dom";
 
 const Slider = () => {
 
-    // {
-    //     "id": 1,
-    //     "image": "https://i.ibb.co/XYZ123/career-counseling-session.jpg",
-    //     "serviceName": "Career Counseling Sessions",
-    //     "category": "Online",
-    //     "description": "Personalized one-on-one counseling to help you identify your career goals and plan a clear path.",
-    //     "pricing": "$50 per session",
-    //     "duration": "05-12-24, 3:00 PM - 4:00 PM",
-    //     "counselor": "Dr. Emily Carter",
-    //     "rating": 4.8,
-    //     "buttonText": "Learn More"
-    // },
-    // {
-    //     "id": 2,
-    //     "image": "https://i.ibb.co/XYZ456/resume-review.jpg",
-    //     "serviceName": "Resume Review",
-    //     "category": "Offline",
-    //     "description": "Get expert feedback to optimize your resume and stand out in the job market.",
-    //     "pricing": "$25 per review",
-    //     "duration": "06-12-24, 11:00 AM - 1:00 PM",
-    //     "counselor": "Mr. James Anderson",
-    //     "rating": 4.7,
-    //     "buttonText": "Learn More"
-    // },
-    // {
-    //     "id": 3,
-    //     "image": "https://i.ibb.co/XYZ789/interview-prep.jpg",
-    //     "serviceName": "Interview Preparation Workshop",
-    //     "category": "Group",
-    //     "description": "A group session to enhance your interview skills with mock interviews and tips.",
-    //     "pricing": "$40 per person",
-    //     "duration": "07-12-24, 2:00 PM - 5:00 PM",
-    //     "counselor": "Ms. Rachel Green",
-    //     "rating": 4.9,
-    //     "buttonText": "Learn More"
-    // },
-
     return (
         <div>
             <div className="carousel w-full">

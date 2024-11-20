@@ -6,13 +6,13 @@ import { FaInstagram } from "react-icons/fa";
 const Footer = () => {
     return (
         <div>
-            <footer className="footer bg-blue-900 text-neutral-content p-10">
-                <aside>
-                    <Link className="btn border-blue-800 font-extrabold lg:text-3xl text-xl font-poppins text-blue-600 my-10" to="/">CareerCompass</Link>
+            <footer className="footer bg-blue-900 flex-wrap text-neutral-content md:px-10 px-5">
+                <aside className="md:w-auto w-full">
+                    <Link className="btn border-blue-800 font-extrabold text-3xl font-poppins text-blue-600 md:my-10 my-5 md:mx-0 mx-auto" to="/">CareerCompass</Link>
                 </aside>
-                <nav className="my-7 gap-5">
+                <nav className="md:my-10 my-2 md:ml-auto mx-auto">
                     <h6 className="font-extrabold text-2xl text-white">Socials</h6>
-                    <div className="grid grid-flow-col gap-10 text-3xl">
+                    <div className="flex gap-10 text-3xl">
                         <a href="https://facebook.com" target="_blank">
                             <FaFacebook />
                         </a>
