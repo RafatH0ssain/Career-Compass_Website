@@ -7,7 +7,7 @@ const ServiceCard = ({ service }) => {
     // Split the description into words
     const descriptionWords = service.description.split(" ");
     const limitedDescription = descriptionWords.slice(0, 10).join(" ");
-    
+
     // Function to toggle the full description visibility
     const toggleDescription = () => setShowFullText(!showFullText);
 
@@ -15,7 +15,7 @@ const ServiceCard = ({ service }) => {
         <div className="mx-auto">
             <div className="card bg-base-100 w-96 h-[500px] shadow-xl gap-5">
                 <figure>
-                    <img src={service.image} alt={service.serviceName} className="rounded-xl w-full h-full object-cover"/>
+                    <img src={service.image} alt={service.serviceName} className="rounded-xl w-full h-full object-cover" />
                 </figure>
                 <div className="card-body text-left gap-2">
                     <h2 className="card-title">
@@ -25,8 +25,8 @@ const ServiceCard = ({ service }) => {
                     <p>
                         {showFullText ? service.description : limitedDescription}
                         {descriptionWords.length > 10 && (
-                            <Link 
-                                onClick={toggleDescription} 
+                            <Link
+                                to={`/services/${service.id}`}
                                 className="ml-2 text-blue-600 underline">
                                 {showFullText ? "Show less" : "read more"}
                             </Link>

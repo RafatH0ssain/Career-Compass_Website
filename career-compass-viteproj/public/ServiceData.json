@@ -2,7 +2,7 @@
     {
         "id": 1,
         "image": "https://i.ibb.co/qBKp8F6/Career-Counselling-Sessions.jpg",
-        "serviceName": "Career Counseling Sessions",
+        "serviceName": "Counseling Sessions",
         "category": "Online",
         "description": "Receive personalized, one-on-one counseling to identify your career goals and create a clear, actionable plan. This session is designed to guide you toward achieving your professional aspirations with expert advice.",
         "pricing": "$50 per session",
@@ -24,7 +24,7 @@
     {
         "id": 3,
         "image": "https://i.ibb.co/Dkf9QdX/Interview-Practice.jpg",
-        "serviceName": "Interview Preparation Workshop",
+        "serviceName": "Interview Prep Workshop",
         "category": "Group",
         "description": "Join a group session to enhance your interview skills. Participate in mock interviews, receive valuable tips, and learn how to effectively communicate your qualifications to prospective employers in any industry.",
         "pricing": "$40 per person",
@@ -57,34 +57,12 @@
     {
         "id": 6,
         "image": "https://i.ibb.co/b61MCfV/Career-Development-Online-Workshop.jpg",
-        "serviceName": "Career Development Online Workshop",
+        "serviceName": "Online Career Workshop",
         "category": "Online",
         "description": "An intensive online workshop focused on advancing your career. Participate in case studies, get hands-on tips from experts, and receive guidance on how to strategically move forward in your professional journey.",
         "pricing": "$75 per session",
         "duration": "10-12-24, 9:00 AM - 12:00 PM",
         "counselor": "Dr. Linda Smith",
         "rating": 5.0
-    },
-    {
-        "id": 7,
-        "image": "https://i.ibb.co/RBCx9tS/Virtual-Career-Fair.jpg",
-        "serviceName": "Virtual Career Fair",
-        "category": "Group",
-        "description": "Participate in a virtual career fair to connect with top employers, recruiters, and job opportunities across industries. Gain insights into the job market, attend company sessions, and apply for jobs in real-time.",
-        "pricing": "$100 for full access",
-        "duration": "12-12-24, 10:00 AM - 4:00 PM",
-        "counselor": "CareerConnect Team",
-        "rating": 4.3
-    },
-    {
-        "id": 8,
-        "image": "https://i.ibb.co/XZYbztd/One-on-One-Career-Coaching.jpg",
-        "serviceName": "One-on-One Career Coaching",
-        "category": "Online",
-        "description": "Gain personalized career coaching with one-on-one sessions. Receive actionable insights, feedback, and expert guidance to help you navigate your career path and reach your professional goals effectively.",
-        "pricing": "$150 per session",
-        "duration": "12-12-24 3-4pm",
-        "counselor": "John Doe, Senior Career Coach",
-        "rating": 4.8
     }
 ]

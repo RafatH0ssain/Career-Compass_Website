@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 import Loader from "../components/Loader";
+import ServiceDetails from "../pages/Services/ServiceDetails";
 
 const router = createBrowserRouter([
     {
@@ -10,10 +11,21 @@ const router = createBrowserRouter([
     },
     {
         path: '/services/:id',
-        // element: <PrivateRoute>
-        //     <NewsDetails />
-        // </PrivateRoute>,
-        // loader: ({ params }) => fetch(`https://openapi.programming-hero.com/api/news/${params.id}`),
+        element: <ServiceDetails/>,
+        loader: async ({ params }) => {
+            const response = await fetch('/ServiceData.json'); // Replace with the actual path
+            if (!response.ok) {
+                throw new Response("Failed to load services data", { status: response.status });
+            }
+            const services = await response.json();
+            const serviceID = services.find((service) => service.id === Number(params.id));
+
+            if (!serviceID) {
+                throw new Response("Service Not Found", { status: 404 });
+            }
+
+            return (serviceID);
+        },
     },
     {
         path: '/auth',
