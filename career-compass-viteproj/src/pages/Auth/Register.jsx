@@ -1,58 +1,57 @@
 import { useContext, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
-import { useNavigate } from "react-router-dom";
 
 const Register = () => {
     const { createUser, setUser, updateUserProfile } = useContext(AuthContext);
     const [error, setError] = useState({});
+    const [toastMessage, setToastMessage] = useState(null); // For toast messages
     const navigate = useNavigate();
+
     const handleSubmit = (e) => {
         e.preventDefault();
         const form = new FormData(e.target);
         const name = form.get("name");
-        if (name.length < 5) {
-            setError({ ...error, name: "Name must be more than 5 characters long!" });
-            return;
-        }
-        const email = form.get("email");
-        // Simple email validation regex
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            setError({ ...error, email: "Please enter a valid email address!" });
-            return;
-        }
-
-        const photo = form.get("photo");
-        // Simple URL validation regex
-        const urlRegex = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/;
-        if (!urlRegex.test(photo)) {
-            setError({ ...error, photo: "Please enter a valid URL!" });
+        if (name.length < 3) {
+            setError({ ...error, name: "Name must be more than 3 characters long!" });
+            setToastMessage("Name must be more than 3 characters long!");
             return;
         }
         const password = form.get("password");
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+        if (!passwordRegex.test(password)) {
+            setError({ ...error, password: "Password must have at least 6 characters, including an uppercase and a lowercase letter!" });
+            setToastMessage("Password must have at least 6 characters, including an uppercase and a lowercase letter!");
+            return;
+        }
 
         createUser(email, password)
             .then((result) => {
                 const user = result.user;
                 setUser(user);
-                updateUserProfile({displayName: name, photoURL: photo})
-                .then(() => {
-                    navigate("/");
-                })
-                .catch((err) => {
-                    console.log(err);
-                });
+                updateUserProfile({ displayName: name, photoURL: photo })
+                    .then(() => {
+                        setToastMessage("Registration successful!");
+                        navigate("/");
+                    })
+                    .catch((err) => {
+                        setToastMessage(err.message);
+                    });
             })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                console.log(errorCode, errorMessage);
-            })
+            .catch((err) => {
+                setToastMessage(err.message);
+            });
     };
 
     return (
         <div className="mt-6 min-h-screen flex justify-center items-center">
+            {toastMessage && (
+                <div className="toast toast-top toast-center">
+                    <div className="alert alert-error">
+                        <span>{toastMessage}</span>
+                    </div>
+                </div>
+            )}
             <div className="card bg-base-100 w-full max-w-lg mx-auto shrink-0 rounded-none p-10">
                 <h2 className="font-bold text-center text-3xl pt-5">Register your Account</h2>
                 <form className="card-body" onSubmit={handleSubmit}>
@@ -61,53 +60,32 @@ const Register = () => {
                             <span className="label-text">Name</span>
                         </label>
                         <input type="text" placeholder="Name" className="input input-bordered" required name="name" />
-                        {
-                            <label className="label text-xs text-rose-500">
-                                {error.name}
-                            </label>
-                        }
                     </div>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Photo URL</span>
                         </label>
                         <input type="text" placeholder="www.exampleImageURL.com" className="input input-bordered" required name="photo" />
-                        {
-                            <label className="label text-xs text-rose-500">
-                                {error.photo}
-                            </label>
-                        }
                     </div>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Email</span>
                         </label>
                         <input type="email" placeholder="email" className="input input-bordered" required name="email" />
-                        {
-                            <label className="label text-xs text-rose-500">
-                                {error.email}
-                            </label>
-                        }
                     </div>
                     <div className="form-control">
                         <label className="label">
                             <span className="label-text">Password</span>
                         </label>
                         <input type="password" placeholder="password" className="input input-bordered" required name="password" />
-                        {
-                            <label className="label text-xs text-rose-500">
-                                {error.password}
-                            </label>
-                        }
-                        <label className="label">
-                            <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                        </label>
                     </div>
                     <div className="form-control mt-6">
                         <button className="btn btn-neutral rounded-none">Register</button>
                     </div>
                 </form>
-                <p className="text-center font-semibold">Already Have An Account? <Link className="text-red-500" to="/auth/login">Login</Link></p>
+                <p className="text-center font-semibold">
+                    Already Have An Account? <Link className="text-red-500" to="/auth/login">Login</Link>
+                </p>
             </div>
         </div>
     );

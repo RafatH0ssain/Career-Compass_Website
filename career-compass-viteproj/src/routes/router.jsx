@@ -6,6 +6,8 @@ import PrivateRoute from "../pages/Auth/PrivateRoute.jsx";
 import AuthLayout from "../pages/Auth/AuthLayout.jsx";
 import Login from "../pages/Auth/Login.jsx";
 import Register from "../pages/Auth/Register.jsx";
+import NotFound from "../pages/NotFound/NotFound.jsx";
+import ExtraRoute from "../pages/ExtraRoute/ExtraRoute.jsx";
 
 const router = createBrowserRouter([
     {
@@ -49,8 +51,12 @@ const router = createBrowserRouter([
     },
     {
         path: "*",
-        element: <h1>Error</h1>
+        element: <NotFound/>
     },
+    {
+        path: "/extraRoute",
+        element: <ExtraRoute/>
+    }
 ]);
 
 export default router;

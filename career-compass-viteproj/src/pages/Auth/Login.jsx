@@ -1,6 +1,6 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 
 const Login = () => {
 
@@ -8,6 +8,14 @@ const Login = () => {
     const [error, setError] = useState({});
     const location = useLocation();
     const navigate = useNavigate();
+
+    
+    const { user } = useContext(AuthContext);
+    useEffect(() => {
+        if (user) {
+            navigate("/"); // Redirect to home or another page
+        }
+    }, [user, navigate]);
 
     const handleSubmit = (e) => {
         e.preventDefault();

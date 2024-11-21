@@ -48,7 +48,7 @@ const ServiceDetails = () => {
                             </div>
                         </div>
                         <div className="gap-10 flex justify-between">
-                            <Link className="btn btn-primary px-6 py-3 text-lg shadow-md hover:bg-black">
+                            <Link className="btn btn-primary px-6 py-3 text-lg shadow-md hover:bg-black" to="/extraRoute">
                                 Get Started
                             </Link>
                             <Link className="btn btn-warning px-6 py-3 text-lg shadow-md hover:bg-gray-700" to="/">
