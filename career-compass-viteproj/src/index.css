@@ -7,3 +7,11 @@
 .josefin-sans-font {
     font-family: "Josefin Sans", sans-serif;
 }
+
+.carousel-item {
+    display: none; /* Initially hide all slides */
+}
+
+.carousel-item.active {
+    display: block; /* Show the active slide */
+}

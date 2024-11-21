@@ -5,7 +5,7 @@ const Slider = () => {
     return (
         <div>
             <div className="carousel w-full">
-                <div id="slide1" className="carousel-item relative w-full">
+                <div id="slide-1" className="carousel-item relative w-full">
                     <img
                         src="https://i.ibb.co/qBKp8F6/Career-Counselling-Sessions.jpg"
                         className="w-full" />
@@ -15,12 +15,12 @@ const Slider = () => {
                         <Link className="btn bg-blue-600 border-none text-white font-extrabold" to="/services/1">Book a Session</Link>
                     </div>
                     <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-                        <a href="#slide3" className="btn btn-circle lg:bg-white bg-transparent border-none">❮</a>
-                        <a href="#slide2" className="btn btn-circle lg:bg-white bg-transparent border-none">❯</a>
+                        <a href="#slide-3" className="btn btn-circle lg:bg-white bg-transparent border-none">❮</a>
+                        <a href="#slide-2" className="btn btn-circle lg:bg-white bg-transparent border-none">❯</a>
                     </div>
                 </div>
 
-                <div id="slide2" className="carousel-item relative w-full">
+                <div id="slide-2" className="carousel-item relative w-full">
                     <img
                         src="https://i.ibb.co/f273hF6/Resume-Review.jpg"
                         className="w-full" />
@@ -30,12 +30,12 @@ const Slider = () => {
                         <Link className="btn bg-blue-600 border-none text-white font-extrabold" to="/services/2">Book a Session</Link>
                     </div>
                     <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-                        <a href="#slide1" className="btn btn-circle lg:bg-white bg-transparent border-none">❮</a>
-                        <a href="#slide3" className="btn btn-circle lg:bg-white bg-transparent border-none">❯</a>
+                        <a href="#slide-1" className="btn btn-circle lg:bg-white bg-transparent border-none">❮</a>
+                        <a href="#slide-3" className="btn btn-circle lg:bg-white bg-transparent border-none">❯</a>
                     </div>
                 </div>
 
-                <div id="slide3" className="carousel-item relative w-full">
+                <div id="slide-3" className="carousel-item relative w-full">
                     <img
                         src="https://i.ibb.co/Dkf9QdX/Interview-Practice.jpg"
                         className="w-full" />
@@ -45,8 +45,8 @@ const Slider = () => {
                         <Link className="btn bg-blue-600 border-none text-white font-extrabold" to="/services/3">Book a Session</Link>
                     </div>
                     <div className="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 transform justify-between">
-                        <a href="#slide2" className="btn btn-circle lg:bg-white bg-transparent border-none">❮</a>
-                        <a href="#slide1" className="btn btn-circle lg:bg-white bg-transparent border-none">❯</a>
+                        <a href="#slide-2" className="btn btn-circle lg:bg-white bg-transparent border-none">❮</a>
+                        <a href="#slide-1" className="btn btn-circle lg:bg-white bg-transparent border-none">❯</a>
                     </div>
                 </div>
 

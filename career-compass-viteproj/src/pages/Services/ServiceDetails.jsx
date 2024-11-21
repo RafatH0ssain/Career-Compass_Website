@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import Footer from "../../components/Footer";
 
 const ServiceDetails = () => {
-    const { id } = useParams();
     const service = useLoaderData();
 
     // Fetch or retrieve the service details based on the ID
