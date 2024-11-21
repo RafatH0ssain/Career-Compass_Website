@@ -2,6 +2,10 @@ import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 import Loader from "../components/Loader";
 import ServiceDetails from "../pages/Services/ServiceDetails";
+import PrivateRoute from "../pages/Auth/PrivateRoute.jsx";
+import AuthLayout from "../pages/Auth/AuthLayout.jsx";
+import Login from "../pages/Auth/Login.jsx";
+import Register from "../pages/Auth/Register.jsx";
 
 const router = createBrowserRouter([
     {
@@ -11,7 +15,9 @@ const router = createBrowserRouter([
     },
     {
         path: '/services/:id',
-        element: <ServiceDetails/>,
+        element: <PrivateRoute>
+            <ServiceDetails />
+        </PrivateRoute>,
         loader: async ({ params }) => {
             const response = await fetch('/ServiceData.json'); // Replace with the actual path
             if (!response.ok) {
@@ -29,17 +35,17 @@ const router = createBrowserRouter([
     },
     {
         path: '/auth',
-        // element: <AuthLayout />,
-        // children: [
-        //     {
-        //         path: '/auth/login',
-        //         element: <Login />
-        //     },
-        //     {
-        //         path: '/auth/register',
-        //         element: <Register />
-        //     },
-        // ],
+        element: <AuthLayout />,
+        children: [
+            {
+                path: '/auth/login',
+                element: <Login />
+            },
+            {
+                path: '/auth/register',
+                element: <Register />
+            },
+        ],
     },
     {
         path: "*",

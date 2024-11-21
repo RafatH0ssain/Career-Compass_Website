@@ -8,10 +8,10 @@
     font-family: "Josefin Sans", sans-serif;
 }
 
-.carousel-item {
+#autoCarousel .carousel-item {
     display: none; /* Initially hide all slides */
 }
 
-.carousel-item.active {
+#autoCarousel .carousel-item.active {
     display: block; /* Show the active slide */
 }
