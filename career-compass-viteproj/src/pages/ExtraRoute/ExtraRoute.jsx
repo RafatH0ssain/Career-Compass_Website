@@ -1,14 +1,13 @@
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
+import CountDown from "./CountDown";
 
 const ExtraRoute = () => {
     return (
         <div>
-            <Navbar/>
-                <div>
-                    
-                </div>
-            <Footer/>
+            <Navbar />
+            <CountDown />
+            <Footer />
         </div>
     );
 };

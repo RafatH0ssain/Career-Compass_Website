@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyC6op73tQrJ_ZWybm9Bv9XvH2gURe6Ocpc",
-    authDomain: "career-compass-1d025.firebaseapp.com",
-    projectId: "career-compass-1d025",
-    storageBucket: "career-compass-1d025.firebasestorage.app",
-    messagingSenderId: "87399477499",
-    appId: "1:87399477499:web:20bdacd1970f8dabfe405e"
+    apiKey: import.meta.env.VITE_apiKey,
+    authDomain: import.meta.env.VITE_authDomain,
+    projectId: import.meta.env.VITE_projectId,
+    storageBucket: import.meta.env.VITE_storageBucket,
+    messagingSenderId: import.meta.env.VITE_messagingSenderId,
+    appId: import.meta.env.VITE_appId
 };
 
 // Initialize Firebase
